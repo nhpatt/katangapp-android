@@ -47,7 +47,7 @@ public class MainActivity extends BaseGeoLocatedActivity {
     private TextView radioLabel;
 
     @Subscribe
-    public void stopsReceived(QueryResult queryResult) {
+    public void busStopsReceived(QueryResult queryResult) {
         Intent intent = new Intent(MainActivity.this, ShowStopsActivity.class);
 
         intent.putExtra("queryResult", queryResult);
@@ -60,7 +60,7 @@ public class MainActivity extends BaseGeoLocatedActivity {
     }
 
     @Subscribe
-    public void stopsReceived(Error error) {
+    public void busStopsReceived(Error error) {
         toggleVisualComponents(true);
 
         Log.e(TAG, "Error calling server ", error);
