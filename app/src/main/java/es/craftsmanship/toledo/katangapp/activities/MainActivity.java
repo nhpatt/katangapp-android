@@ -39,6 +39,7 @@ public class MainActivity extends BaseGeoLocatedActivity {
     private CircleButton helpButton;
     private ProgressBar searchProgressBar;
     private SeekBar seekBar;
+    private String radio;
     private TextView radioLabel;
 
     @Subscribe
@@ -53,6 +54,7 @@ public class MainActivity extends BaseGeoLocatedActivity {
         Intent intent = new Intent(MainActivity.this, ShowStopsActivity.class);
 
         intent.putExtra("queryResult", queryResult);
+        intent.putExtra("radio", radio);
 
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
@@ -132,7 +134,7 @@ public class MainActivity extends BaseGeoLocatedActivity {
             public void onClick(View v) {
                 CharSequence charSequence = radioLabel.getText();
 
-                String radio = charSequence.toString();
+                radio = charSequence.toString();
 
                 if (radio.isEmpty()) {
                     radio = String.valueOf(DEFAULT_RADIO);
