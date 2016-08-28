@@ -42,8 +42,6 @@ public class ShowStopsActivity extends AppCompatActivity {
             }
 
             RecyclerView recyclerView = (RecyclerView) findViewById(R.id.stops);
-
-            recyclerView.setLayoutManager(new LinearLayoutManager(this));
             recyclerView.setAdapter(new StopsAdapter(busStopResults));
         }
         else {
